@@ -23,7 +23,6 @@ const scrapeLogic = async (res) => {
     await page.setViewport({ width: 1080, height: 1024 });
 
     // Type into search box
-    await page.type("search-box", "automate beyond recorder");
     const logStatement = "hello world"
     res.send(logStatement);
   } catch (e) {
