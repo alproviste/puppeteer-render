@@ -24,21 +24,7 @@ const scrapeLogic = async (res) => {
 
     // Type into search box
     await page.type("search-box", "automate beyond recorder");
-
-    // Wait and click on first result
-    const searchResultSelector = ".search-box__link";
-    await page.waitForSelector(searchResultSelector);
-    await page.click(searchResultSelector);
-
-    // Locate the full title with a unique string
-    const textSelector = await page.waitForSelector(
-      "text/Customize and automate"
-    );
-    const fullTitle = await textSelector.evaluate((el) => el.textContent);
-
-    // Print the full title
-    const logStatement = `The title of this blog post is ${fullTitle}`;
-    console.log(logStatement);
+    const logStatement = "hello world"
     res.send(logStatement);
   } catch (e) {
     console.error(e);
