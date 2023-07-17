@@ -6,10 +6,9 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 
-app.get("/search", (req, res) => {
+app.get("/api/search", (req, res) => {
   scrapeLogic(req, res);
 });
-
 
 
 app.get("/", (req, res) => {

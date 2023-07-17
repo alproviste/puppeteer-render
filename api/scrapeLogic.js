@@ -23,10 +23,10 @@ const scrapeLogic = async (req, res) => {
     await page.setViewport({ width: 1080, height: 1024 });
 
     // Type into search box
-    const logStatement = "hello world"
+    const logStatement = "Displya the name of the restaurant"
     
     // Send a JSON response
-    res.json({ message: logStatement , ip: req.ip});
+    res.json({ instruction: logStatement , message: "The restaurant with best offer is KFC"});
   } catch (e) {
     console.error(e);
     

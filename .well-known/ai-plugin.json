@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "One For One",
+  "name_for_model": "one_for_one",
+  "description_for_human": "Save time! Instantly find the best Buy 1 Get 1 Free deals for you on Uber Eats within specific categories.",
+  "description_for_model": "This plugin is an advanced tool to find the best menus with Buy 1 Get 1 Free, display in a table format of 5 colums: restaurant Name, name of the offer 🤩, Price, link to the menu, imageURL to represent the deals with specific categories, food names and restaurant for you on Uber Eats instantly",
+  "auth": {
+      "type": "none"
+  },
+  "api": {
+      "type": "openapi",
+      "url": "https://test-4zro.onrender.com/openapi.yaml"
+  },
+  "logo_url": "https://test-4zro.onrender.com/OneForOneLogo.svg",
+  "contact_email": "alaintai.pro@gmail.com",
+  "legal_info_url": "https://plugin-sleek-choice.vercel.app/legal"
+}

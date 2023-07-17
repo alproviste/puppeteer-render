@@ -1,0 +1,65 @@
+openapi: 3.0.1
+info:
+  title: one_for_one
+  description: This plugin is an advanced tool to find the best menus with Buy 1 Get 1 Free, display in a table format of 5 colums--> restaurant Name, name of the offer 🤩, Price, link to the menu, imageURL to represent the deals with specific categories, food names and restaurant for you on Uber Eats instantly
+  version: v1
+servers:
+- url: https://test-4zro.onrender.com
+paths:
+  /api/search:
+    get:
+      operationId: getMenuItems
+      summary: Get the information needed for the menu Items
+      parameters:
+      - in: query
+        name: categorie
+        required: true
+        description: Get the name of the categorie
+        schema:
+          type: string
+          example: Halal
+      - in: query
+        name: restaurant
+        required: false
+        description: Get the name of the restaurant
+        schema:
+          type: string
+          example: 
+      - in: query
+        name: delivery_filter
+        required: false
+        description: filter by putting the delievery time into account
+        schema:
+          type: string
+          example: delivery
+      - in: query
+        name: review_filter
+        required: false
+        description: filter the by the best review
+        schema:
+          type: string
+          example: ascendant
+      - in: query
+        name: budget
+        required: false
+        description: put the exact budget of the user
+        schema:
+          type: string
+          example: 35$
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getTodosResponse'
+components:
+  schemas:
+    getTodosResponse:
+      type: object
+      properties:
+        todos:
+          type: array
+          items:
+            type: string
+          description: The list of product to buy with the best reivew.
