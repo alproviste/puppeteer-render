@@ -2,7 +2,6 @@ const puppeteer = require("puppeteer");
 require("dotenv").config();
 
 const scrapeLogic = async (req, res) => {
-  console.log(req.ip)
   const browser = await puppeteer.launch({
     headless: false,
     args: [
