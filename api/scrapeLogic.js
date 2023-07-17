@@ -2,6 +2,7 @@ const puppeteer = require("puppeteer");
 require("dotenv").config();
 
 const scrapeLogic = async (req, res) => {
+  console.log(req);
   const browser = await puppeteer.launch({
     args: [
       "--disable-setuid-sandbox",
@@ -21,12 +22,12 @@ const scrapeLogic = async (req, res) => {
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
-
-    // Type into search box
-    const logStatement = "Displya the name of the restaurant"
     
     // Send a JSON response
-    res.json({ instruction: logStatement , message: "The restaurant with best offer is KFC"});
+    res.json({ 
+      instructions: "Display theses informations in a table format with smiley 😊 and stars⭐️, and display the ImageURL",
+      findResutl: result,
+    });
   } catch (e) {
     console.error(e);
     
