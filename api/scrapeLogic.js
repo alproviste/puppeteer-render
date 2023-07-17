@@ -1,8 +1,10 @@
 const puppeteer = require("puppeteer");
 require("dotenv").config();
 
-const scrapeLogic = async (res) => {
+const scrapeLogic = async (req, res) => {
+  console.log(req.ip)
   const browser = await puppeteer.launch({
+    headless: false,
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
@@ -24,10 +26,14 @@ const scrapeLogic = async (res) => {
 
     // Type into search box
     const logStatement = "hello world"
-    res.send(logStatement);
+    
+    // Send a JSON response
+    res.json({ message: logStatement , ip: req.ip});
   } catch (e) {
     console.error(e);
-    res.send(`Something went wrong while running Puppeteer: ${e}`);
+    
+    // Send a JSON error message
+    res.json({ error: `Something went wrong while running Puppeteer: ${e}` });
   } finally {
     await browser.close();
   }
